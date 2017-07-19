@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var http2 = require('..');
+var http2js = require('..');
 
 // We cache one file to be able to do simple performance tests without waiting for the disk
 var cachedFile = fs.readFileSync(path.join(__dirname, './server.js'));
@@ -54,11 +54,11 @@ var log = require('../test/util').createLogger('server');
 // Creating the server in plain or TLS mode (TLS mode is the default)
 var server;
 if (process.env.HTTP2_PLAIN) {
-  server = http2.raw.createServer({
+  server = http2js.raw.createServer({
     log: log
   }, onRequest);
 } else {
-  server = http2.createServer({
+  server = http2js.createServer({
     log: log,
     key: fs.readFileSync(path.join(__dirname, '/localhost.key')),
     cert: fs.readFileSync(path.join(__dirname, '/localhost.crt'))

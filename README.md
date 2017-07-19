@@ -10,7 +10,7 @@ Installation
 ------------
 
 ```
-npm install http2
+npm install http2js
 ```
 
 API
@@ -33,7 +33,7 @@ var options = {
   cert: fs.readFileSync('./example/localhost.crt')
 };
 
-require('http2').createServer(options, function(request, response) {
+require('http2js').createServer(options, function(request, response) {
   response.end('Hello world!');
 }).listen(8080);
 ```
@@ -41,7 +41,7 @@ require('http2').createServer(options, function(request, response) {
 ### Using as a client ###
 
 ```javascript
-require('http2').get('https://localhost:8080/', function(response) {
+require('http2js').get('https://localhost:8080/', function(response) {
   response.pipe(process.stdout);
 });
 ```

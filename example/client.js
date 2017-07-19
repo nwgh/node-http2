@@ -1,10 +1,10 @@
 var fs = require('fs');
 var path = require('path');
-var http2 = require('..');
+var http2js = require('..');
 var urlParse = require('url').parse;
 
 // Setting the global logger (optional)
-http2.globalAgent = new http2.Agent({
+http2js.globalAgent = new http2js.Agent({
   rejectUnauthorized: true,
   log: require('../test/util').createLogger('client')
 });
@@ -19,7 +19,7 @@ if (options.hostname == 'localhost') {
   options.ca = fs.readFileSync(path.join(__dirname, '/localhost.crt'));
 }
 
-var request = process.env.HTTP2_PLAIN ? http2.raw.get(options) : http2.get(options);
+var request = process.env.HTTP2_PLAIN ? http2js.raw.get(options) : http2js.get(options);
 
 // Receiving the response
 request.on('response', function(response) {

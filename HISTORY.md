@@ -1,6 +1,9 @@
 Version history
 ===============
 
+### 3.3.7 (2017-07-19) ###
+* Rename package to allow for modern, native node implemenation to take this module's original name.
+
 ### 3.3.6 (2016-09-16) ###
 * We were not appropriately sending HPACK context updates when receiving SETTINGS_HEADER_TABLE_SIZE. This release fixes that bug.
 
