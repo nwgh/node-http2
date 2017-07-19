@@ -1,6 +1,9 @@
 Version history
 ===============
 
+### 3.3.8 (2017-??-??) ###
+* Rename package to allow downloading this without deprecation warnings.
+
 ### 3.3.7 (2017-09-21) ###
 * Mark as incompatible with node >= 9.0.0 (to encourage using the built-in http2 module available by default in node >= 9.0.0).
 
