@@ -34,4 +34,3 @@ if [[ ! -d "${HOME}/bin" ]] ; then
     mkdir "${HOME}/bin"
 fi
 ln -s "${TEST_ROOT}/build/tests/mach" "${HOME}/bin"
-ln "${TEST_ROOT}/build/venv/bin/python" "${TEST_ROOT}/build/venv/bin/python2.7"
