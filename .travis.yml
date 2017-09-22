@@ -2,4 +2,11 @@
  node_js:
    - "iojs"
    - "0.12"
-
+ addons:
+   apt:
+     packages:
+     - python
+     - python-six
+     - python-virtualenv
+ before_script: ./download-firefox-tests.sh
+ script: ./run-firefox-tests.sh
