@@ -2,8 +2,11 @@
 
 set -ex
 
-pwd
-ls
+NODE_HTTP2_ROOT="$(pwd)"
+export NODE_HTTP2_ROOT
+
+MOZ_NODE_PATH="$(which node)"
+export MOZ_NODE_PATH
 
 cd firefox-tests
 ./mach --help
