@@ -27,7 +27,7 @@ cd firefox-tests
 TEST_ROOT="$(pwd)"
 
 # Let mozharness do most of the work for us, since it'll set stuff up right
-"${TEST_ROOT}/mozharness/scripts/desktop_unittest.py" --config-file "${TEST_ROOT}/mozharness/configs/unittests/linux_unittest.py" --config-file "${TEST_ROOT}/mozharness/configs/remove_executables.py" --no-read-buildbot-config --installer-url="${INSTALLER}" --test-packages-url="${TEST_PACKAGES}" --xpcshell-suite=xpcshell --total-chunk=1 --this-chunk=1 --download-symbols=ondemand --no-run-tests
+python2.7 "${TEST_ROOT}/mozharness/scripts/desktop_unittest.py" --config-file "${TEST_ROOT}/mozharness/configs/unittests/linux_unittest.py" --config-file "${TEST_ROOT}/mozharness/configs/remove_executables.py" --no-read-buildbot-config --installer-url="${INSTALLER}" --test-packages-url="${TEST_PACKAGES}" --xpcshell-suite=xpcshell --total-chunk=1 --this-chunk=1 --download-symbols=ondemand --no-run-tests
 
 # Now a bit more setup for goodness/ease of use
 mkdir "${HOME}/bin"
