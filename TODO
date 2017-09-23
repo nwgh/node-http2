@@ -1,0 +1,3 @@
+- Build succeeds even when xpcshell tests fail (mach xpcshell-test doesn't return non-zero on failure?!)
+    - May be able to get structured logging, then look at that in the runner script to determine success/failure
+- Not connecting as http/2... not sure why.
