@@ -34,3 +34,6 @@ if [[ ! -d "${HOME}/bin" ]] ; then
     mkdir "${HOME}/bin"
 fi
 ln -s "${TEST_ROOT}/build/tests/mach" "${HOME}/bin"
+
+# For some reason, this ends up with a busted script for running xpcshell tests. Fix that
+cp "${TEST_ROOT}/../mach_test_package_commands.py" "${TEST_ROOT}/build/tests/xpcshell"

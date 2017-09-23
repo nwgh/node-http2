@@ -14,5 +14,5 @@ export PATH
 cd firefox-tests
 TEST_ROOT="$(pwd)"
 source "${TEST_ROOT}/build/venv/bin/activate"
-mach xpcshell-test xpcshell/tests/netwerk/test/unit/test_http2.js
+mach xpcshell-test netwerk/test/unit/test_http2.js
 exit $?
