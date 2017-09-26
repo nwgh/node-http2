@@ -37,3 +37,7 @@ ln -s "${TEST_ROOT}/build/tests/mach" "${HOME}/bin"
 
 # For some reason, this ends up with a busted script for running xpcshell tests. Fix that
 cp "${TEST_ROOT}/../mach_test_package_commands.py" "${TEST_ROOT}/build/tests/xpcshell"
+
+# Add some extra logging to the test to try to debug
+cd "${TEST_ROOT}/build/tests/xpcshell/tests"
+patch -p1 < "${TEST_ROOT}/test_http2.js.patch"

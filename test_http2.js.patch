@@ -1,0 +1,36 @@
+diff --git a/netwerk/test/unit/test_http2.js b/netwerk/test/unit/test_http2.js
+index 67435b94c4ad..21d8d45e5a84 100644
+--- a/netwerk/test/unit/test_http2.js
++++ b/netwerk/test/unit/test_http2.js
+@@ -21,25 +21,31 @@ posts.push(generateContent(128000));
+ var md5s = ['f1b708bba17f1ce948dc979f4d7092bc',
+             '2ef8d3b6c8f329318eb1a119b12622b6'];
+ 
+ var bigListenerData = generateContent(128 * 1024);
+ var bigListenerMD5 = '8f607cfdd2c87d6a7eedb657dafbd836';
+ 
+ function checkIsHttp2(request) {
+   try {
++    dump("Checking for X-Firefox-Spdy\n");
+     if (request.getResponseHeader("X-Firefox-Spdy") == "h2") {
++      dump("Checking for X-Connection-Http2\n");
+       if (request.getResponseHeader("X-Connection-Http2") == "yes") {
++        dump("Hooray!\n");
+         return true;
+       }
++      dump("Erm... wtf?!\n");
+       return false; // Weird case, but the server disagrees with us
+     }
+   } catch (e) {
+     // Nothing to do here
++    dump("Got an exception: " + e + "\n");
+   }
++  dump("Fail\n");
+   return false;
+ }
+ 
+ var Http2CheckListener = function() {};
+ 
+ Http2CheckListener.prototype = {
+   onStartRequestFired: false,
+   onDataAvailableFired: false,
